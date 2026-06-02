@@ -84,7 +84,7 @@ SET SQL_SAFE_UPDATES = 1;
 
 
 -- ============================================================================
--- 1. CORE KPI LAYER (EXECUTIVE EXECUTIVE SUMMARY)
+-- 1. CORE KPI LAYER (EXECUTIVE SUMMARY)
 -- ============================================================================
 CREATE OR REPLACE VIEW vw_core_kpi AS
 SELECT 
