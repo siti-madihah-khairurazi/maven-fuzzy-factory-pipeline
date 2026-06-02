@@ -7,6 +7,10 @@
 -- Website: https://www.mavenanalytics.io/
 -- ============================================================================
 
+DROP DATABASE IF EXISTS maven_fuzzy_factory;
+CREATE DATABASE maven_fuzzy_factory;
+USE maven_fuzzy_factory;
+
 -- ============================================================================
 -- 0. DATA PREPARATION & BULK DATA INGESTION
 -- ============================================================================
