@@ -1,6 +1,6 @@
 # Maven Fuzzy Factory – E-Commerce Analytics Project
 
-![Dashboard Preview](executive_dashboard_maven_fuzzy_factory.png)
+![Dashboard Preview](dashboard.png)
 
 ## Overview
 
