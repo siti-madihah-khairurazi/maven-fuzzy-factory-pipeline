@@ -1,101 +1,138 @@
-# 📊 Maven Fuzzy Factory – E-Commerce Analytics Project
-## 🧾 Overview
+# Maven Fuzzy Factory – E-Commerce Analytics Project
 
-This project is an end-to-end e-commerce analytics solution built using MySQL and BI dashboarding.
-It focuses on analysing user behaviour, marketing performance, product revenue, and conversion funnel efficiency using a structured relational database.
+![Dashboard Preview](executive_dashboard_maven_fuzzy_factory.png)
 
-Dataset used is from Maven Analytics – Fuzzy Factory.
+## Overview
 
-The goal of this project is to simulate real-world analytics workflow — from raw data ingestion → SQL transformation → business-ready insights.
+This project demonstrates an end-to-end analytics workflow using MySQL and Power BI to analyse e-commerce performance.
 
-## 🎯 Project Objectives
-Build a clean relational database schema for e-commerce data
-Transform raw datasets into analysis-ready format
-Analyse traffic sources and marketing performance
-Track conversion funnel drop-off points
-Identify revenue performance by product
-Detect potential revenue leakage (refund impact)
-Create executive-level KPI insights for decision making
+The solution transforms raw transactional and web activity data into business-ready insights covering marketing performance, customer conversion behaviour, and product revenue analysis.
 
-## 🛠️ Tech Stack
-MySQL (Data Warehouse & Transformation)
-SQL (Data Cleaning, Joins, Aggregations, Views)
-Power BI / Dashboard Tool (Visualization Layer)
-Excel (Initial data inspection)
+Dataset provided by Maven Analytics.
 
-## 🗂️ Database Design & Pipeline
+---
 
-The project consists of 5 main tables:
+## Business Questions Addressed
 
-website_sessions
-website_pageviews
-orders
-order_items
-products
-order_item_refunds
+- Which marketing channels generate the most traffic and revenue?
+- How effectively does the website convert visitors into customers?
+- Where are the biggest drop-off points in the conversion funnel?
+- Which products contribute the most revenue?
+- How much revenue is potentially lost through refunds?
 
-## Key Work Done:
-Data ingestion using LOAD DATA LOCAL INFILE
-Timestamp cleaning & conversion to DATETIME
-Schema optimization with indexing
-Session-level time dimension creation
-Data quality checks (duplicates, consistency validation)
+---
 
-## 📈 Analytics Views Created
+## Tools & Technologies
 
-### 1. Marketing Performance View
-Tracks:
-Sessions by channel (UTM source)
-Conversion rate
-Revenue per session
-Traffic segmentation by device
+- MySQL
+- SQL
+- Power BI
+- Excel
 
-### 2. Funnel Analysis View
-Breaks down user journey:
-Landing → Product → Cart → Checkout → Purchase
-Drop-off analysis at each stage
-Session-level behavioural tracking
+---
 
-### 3. Product Revenue & Loss View
-Focuses on:
-Gross revenue by product
-Net profit estimation
-Refund impact analysis
-Revenue leakage detection
+## Data Preparation
 
-## 📊 Dashboard Highlights
-📌 Total Traffic: 473K sessions
-💰 Total Revenue: $1.94M
-📈 Revenue per Session: $4.10
-🛒 Conversion Rate: 6.83%
+The project includes:
 
-## Key Insights:
-Most traffic comes from search (gsearch dominant)
-Clear drop-off at product → cart stage
-Certain SKUs contribute higher refund risk
-Conversion rate improves steadily over time
-Revenue growth aligns with traffic expansion
+- Data ingestion from multiple CSV files
+- Timestamp standardisation and datatype conversion
+- Data quality validation and duplicate checks
+- Schema optimisation using indexing
+- Creation of reusable analytical views
 
-## ⚙️ How to Run This Project
-Create database:
-CREATE DATABASE maven_fuzzy_factory;
-Run schema setup script (SQL file provided)
-Import CSV files using:
-LOAD DATA LOCAL INFILE
-Execute analytics views:
-vw_marketing_performance
-vw_funnel_analysis
-vw_product_revenue_loss
-Connect to Power BI / Tableau for visualization
+### Source Tables
 
-## 📌 What I Learned
-How real e-commerce tracking systems are structured
-Building SQL pipelines like a mini data warehouse
-Translating raw data into business KPIs
-Funnel analysis & conversion optimization thinking
-Handling messy timestamp + CSV ingestion issues
+- website_sessions
+- website_pageviews
+- orders
+- order_items
+- products
+- order_item_refunds
 
-## 👤 Author
-Madihah
-Exploring Data Analytics & BI
-Malaysia 🇲🇾
+---
+
+## SQL Analytics Layer
+
+Three analytical views were created to support dashboard reporting:
+
+### vw_marketing_performance
+
+Provides marketing and acquisition metrics including:
+
+- Sessions
+- Orders
+- Revenue
+- Conversion Rate
+- Revenue per Session
+- Device Performance
+
+### vw_funnel_analysis
+
+Tracks user progression through the website funnel:
+
+- Landing Page
+- Products Page
+- Product Details
+- Cart
+- Shipping
+- Billing
+- Purchase
+
+### vw_product_revenue_loss
+
+Measures product performance through:
+
+- Gross Revenue
+- Net Profit
+- Refund Volume
+- Estimated Lost Revenue
+
+---
+
+## Dashboard Highlights
+
+| KPI | Value |
+|------|------|
+| Total Sessions | 473K |
+| Total Revenue | $1.94M |
+| Revenue per Session | $4.10 |
+| Conversion Rate | 6.83% |
+
+---
+
+## Key Insights
+
+- Search traffic generated the majority of website sessions.
+- The largest customer drop-off occurred between the Product Details and Cart stages.
+- Conversion rates improved steadily throughout the reporting period.
+- Revenue growth closely followed increases in website traffic.
+- The Original Mr. Fuzzy recorded the highest estimated revenue loss from refunds.
+
+---
+
+## Repository Contents
+
+- `maven_fuzzy_factory.sql` – Database setup, transformation, and analytical views
+- `dashboard.pbix` – Power BI dashboard
+- `dashboard.png` – Dashboard preview
+
+---
+
+## Skills Demonstrated
+
+- SQL Data Cleaning
+- Data Modelling
+- Data Transformation
+- Exploratory Data Analysis (EDA)
+- Funnel Analysis
+- Marketing Analytics
+- KPI Development
+- Business Intelligence Reporting
+- Power BI Dashboard Design
+
+---
+
+## Author
+
+Siti Madihah
